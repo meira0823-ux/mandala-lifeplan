@@ -1,0 +1,866 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人生曼陀羅｜苗栗創業計畫 2026–2029</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;900&family=Noto+Sans+TC:wght@300;400;500&display=swap');
+
+  :root {
+    --ink: #1a1208;
+    --paper: #f4efe4;
+    --warm: #c8a96e;
+    --deep: #2e1f0e;
+    --rust: #b05a2a;
+    --mist: #e8e0ce;
+    --gold: #d4a84b;
+    --center-bg: #1e1408;
+    --center-text: #f0e0b8;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--paper);
+    font-family: 'Noto Sans TC', sans-serif;
+    color: var(--ink);
+    min-height: 100vh;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .wrapper {
+    position: relative;
+    z-index: 1;
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 44px 20px 70px;
+  }
+
+  header {
+    text-align: center;
+    margin-bottom: 44px;
+    animation: fadeDown 0.7s ease both;
+  }
+
+  .eyebrow {
+    font-size: 10px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: var(--rust);
+    margin-bottom: 12px;
+    font-weight: 500;
+  }
+
+  header h1 {
+    font-family: 'Noto Serif TC', serif;
+    font-size: clamp(20px, 3.5vw, 34px);
+    font-weight: 900;
+    color: var(--deep);
+    line-height: 1.4;
+    margin-bottom: 10px;
+  }
+
+  header h1 em { font-style: normal; color: var(--rust); }
+
+  .tagline {
+    font-size: 12px;
+    color: #7a6a50;
+    letter-spacing: 1.5px;
+    line-height: 1.8;
+  }
+
+  .phase-now {
+    display: inline-block;
+    margin-top: 10px;
+    background: var(--rust);
+    color: #fff;
+    font-size: 10px;
+    letter-spacing: 2px;
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-weight: 500;
+  }
+
+  /* BRAND SOUL */
+  .soul-banner {
+    background: var(--center-bg);
+    border: 1px solid var(--gold);
+    border-radius: 8px;
+    padding: 22px 28px;
+    margin-bottom: 36px;
+    animation: fadeUp 0.8s ease 0.1s both;
+    display: flex;
+    gap: 24px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .soul-banner .label {
+    font-size: 9px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 6px;
+    font-weight: 500;
+  }
+
+  .soul-banner .quote {
+    font-family: 'Noto Serif TC', serif;
+    font-size: clamp(13px, 2vw, 16px);
+    color: var(--center-text);
+    line-height: 1.8;
+    font-weight: 600;
+  }
+
+  .soul-banner .icons { font-size: 24px; letter-spacing: 5px; flex-shrink: 0; }
+
+  .soul-meta { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 10px; }
+
+  .soul-tag {
+    font-size: 10px;
+    color: #b8955a;
+    background: rgba(200,169,110,0.12);
+    border: 1px solid rgba(200,169,110,0.25);
+    border-radius: 4px;
+    padding: 3px 10px;
+  }
+
+  /* MANDALA */
+  .mandala-outer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 7px;
+    margin-bottom: 44px;
+    animation: fadeUp 0.8s ease 0.2s both;
+  }
+
+  .block-9 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3px;
+    background: #d0c4aa;
+    border: 1.5px solid #c4b494;
+    border-radius: 5px;
+    padding: 3px;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .block-9:hover {
+    transform: scale(1.025);
+    box-shadow: 0 10px 35px rgba(40,25,10,0.18);
+    z-index: 10;
+    position: relative;
+  }
+
+  .block-9.center-mega {
+    background: var(--center-bg);
+    border: 2px solid var(--gold);
+    cursor: default;
+    box-shadow: 0 4px 24px rgba(40,25,10,0.35);
+  }
+
+  .block-9.center-mega:hover { transform: none; }
+
+  .cell {
+    min-height: 64px;
+    padding: 6px 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: #faf6ee;
+    border-radius: 2px;
+    font-size: 9.5px;
+    line-height: 1.5;
+    color: var(--deep);
+    transition: background 0.15s;
+  }
+
+  .cell:hover { background: #f0e8d8; }
+
+  .cell .yr {
+    display: inline-block;
+    font-size: 7.5px;
+    background: rgba(0,0,0,0.07);
+    border-radius: 8px;
+    padding: 1px 5px;
+    margin-bottom: 3px;
+    letter-spacing: 0.3px;
+    font-weight: 500;
+  }
+
+  .cell.domain-center {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 10.5px;
+    font-weight: 700;
+    color: #fff;
+    border-radius: 3px;
+    line-height: 1.4;
+  }
+
+  .cell.core {
+    background: #2a1a08;
+    color: var(--center-text);
+    font-family: 'Noto Serif TC', serif;
+    font-size: 9.5px;
+    font-weight: 600;
+    border-radius: 3px;
+    line-height: 1.5;
+  }
+
+  .cell.core-main {
+    background: #150e04;
+    border: 1px solid var(--gold);
+    font-size: 10px;
+  }
+
+  .cell.core:hover, .cell.core-main:hover { background: #2a1a08; }
+
+  .dA .domain-center { background: #4d7040; }
+  .dB .domain-center { background: #2d5e7e; }
+  .dC .domain-center { background: #6b3d5e; }
+  .dD .domain-center { background: #7a5c20; }
+  .dE .domain-center { background: #9e4e22; }
+  .dF .domain-center { background: #3a6e65; }
+  .dG .domain-center { background: #586e30; }
+  .dH .domain-center { background: #6e3e3e; }
+
+  .dA .cell:not(.domain-center) { border-left: 2px solid #4d704038; }
+  .dB .cell:not(.domain-center) { border-left: 2px solid #2d5e7e38; }
+  .dC .cell:not(.domain-center) { border-left: 2px solid #6b3d5e38; }
+  .dD .cell:not(.domain-center) { border-left: 2px solid #7a5c2038; }
+  .dE .cell:not(.domain-center) { border-left: 2px solid #9e4e2238; }
+  .dF .cell:not(.domain-center) { border-left: 2px solid #3a6e6538; }
+  .dG .cell:not(.domain-center) { border-left: 2px solid #586e3038; }
+  .dH .cell:not(.domain-center) { border-left: 2px solid #6e3e3e38; }
+
+  .section-title {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 15px;
+    color: var(--deep);
+    margin-bottom: 14px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #c4b494;
+    letter-spacing: 1px;
+  }
+
+  /* LEGEND */
+  .legend {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+    margin-bottom: 40px;
+    animation: fadeUp 0.8s ease 0.3s both;
+  }
+
+  .legend-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    background: #fff;
+    border: 1px solid #ddd0b8;
+    border-radius: 6px;
+    padding: 10px 11px;
+    font-size: 10.5px;
+    line-height: 1.5;
+  }
+
+  .ldot { width: 9px; height: 9px; border-radius: 50%; flex-shrink: 0; margin-top: 3px; }
+  .legend-item strong { display: block; color: var(--deep); font-size: 11px; }
+  .legend-item span { color: #7a6a50; font-size: 9.5px; }
+
+  /* FINANCE */
+  .finance {
+    margin-bottom: 40px;
+    animation: fadeUp 0.8s ease 0.35s both;
+  }
+
+  .finance-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .finance-card {
+    background: #fff;
+    border: 1px solid #ddd0b8;
+    border-radius: 7px;
+    padding: 18px;
+    font-size: 11px;
+    line-height: 1.7;
+  }
+
+  .finance-card h3 {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 13px;
+    color: var(--deep);
+    margin-bottom: 12px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid #eee0c8;
+  }
+
+  .finance-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 4px 0;
+    border-bottom: 1px solid #f5ece0;
+    color: #4a3a28;
+    gap: 12px;
+  }
+
+  .finance-row:last-child { border-bottom: none; }
+  .finance-row .val { font-weight: 600; color: var(--deep); white-space: nowrap; }
+  .finance-row.highlight { background: #fdf5e8; margin: 4px -4px; padding: 4px 4px; border-radius: 3px; border-bottom: none; }
+  .finance-row.warning .val { color: #b05a2a; }
+  .finance-row.total { border-top: 1.5px solid #c4b494; margin-top: 4px; padding-top: 8px; font-weight: 600; }
+
+  .cashflow-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 10.5px;
+    margin-top: 4px;
+  }
+
+  .cashflow-table th {
+    background: #f0e8d8;
+    color: var(--deep);
+    font-weight: 600;
+    padding: 6px 8px;
+    text-align: left;
+    font-size: 10px;
+  }
+
+  .cashflow-table td {
+    padding: 6px 8px;
+    border-bottom: 1px solid #f0e8d8;
+    color: #4a3a28;
+  }
+
+  .cashflow-table tr:last-child td { border-bottom: none; }
+  .cashflow-table .warn { color: #b05a2a; font-weight: 600; }
+  .cashflow-table .ok { color: #4d7040; font-weight: 600; }
+
+  /* TIMELINE */
+  .timeline { margin-bottom: 40px; animation: fadeUp 0.8s ease 0.45s both; }
+
+  .tl-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+
+  .tl-card {
+    background: #fff;
+    border: 1px solid #ddd0b8;
+    border-radius: 7px;
+    padding: 16px 14px;
+    font-size: 10.5px;
+    line-height: 1.65;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .tl-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+  }
+
+  .tl-card.p1::before { background: #4d7040; }
+  .tl-card.p2::before { background: #2d5e7e; }
+  .tl-card.p3::before { background: #7a5c20; }
+  .tl-card.p4::before { background: #9e4e22; }
+
+  .tl-year {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 22px;
+    font-weight: 900;
+    color: var(--deep);
+    display: block;
+    margin-bottom: 2px;
+    line-height: 1;
+  }
+
+  .tl-phase-label {
+    font-size: 8.5px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--rust);
+    margin-bottom: 10px;
+    display: block;
+  }
+
+  .tl-card ul { list-style: none; }
+  .tl-card ul li {
+    padding: 3.5px 0;
+    border-bottom: 1px solid #f0e8d8;
+    color: #3e2e1a;
+    display: flex;
+    gap: 5px;
+    align-items: flex-start;
+  }
+  .tl-card ul li:last-child { border-bottom: none; }
+  .tl-card ul li::before {
+    content: '→';
+    color: var(--gold);
+    flex-shrink: 0;
+    font-size: 10px;
+    margin-top: 1px;
+  }
+
+  /* RESOURCES */
+  .resources {
+    margin-bottom: 40px;
+    animation: fadeUp 0.8s ease 0.5s both;
+  }
+
+  .resources-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+  }
+
+  .res-card {
+    background: #fff;
+    border: 1px solid #ddd0b8;
+    border-radius: 7px;
+    padding: 14px;
+    font-size: 10.5px;
+    line-height: 1.6;
+  }
+
+  .res-card .res-icon { font-size: 20px; margin-bottom: 6px; display: block; }
+  .res-card h4 {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--deep);
+    margin-bottom: 6px;
+  }
+  .res-card p { color: #5a4a35; font-size: 10px; line-height: 1.6; }
+  .res-tag {
+    display: inline-block;
+    font-size: 9px;
+    background: #f0e8d8;
+    border-radius: 3px;
+    padding: 2px 6px;
+    margin-top: 6px;
+    color: var(--rust);
+    font-weight: 500;
+  }
+
+  /* THREAD */
+  .thread {
+    animation: fadeUp 0.8s ease 0.55s both;
+    background: #fff;
+    border: 1px solid #ddd0b8;
+    border-radius: 8px;
+    padding: 24px 26px;
+  }
+
+  .thread-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-top: 16px;
+  }
+
+  .thread-item {
+    background: var(--paper);
+    border: 1px solid #e0d4be;
+    border-radius: 6px;
+    padding: 14px;
+    font-size: 10.5px;
+    line-height: 1.7;
+  }
+
+  .thread-item .th {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--deep);
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .thread-item p { color: #5a4a35; }
+
+  .arrow-chain {
+    text-align: center;
+    font-size: 11px;
+    color: #8a7a60;
+    margin-top: 18px;
+    line-height: 2.2;
+    letter-spacing: 0.5px;
+  }
+
+  .arrow-chain strong { color: var(--rust); }
+
+  @keyframes fadeDown {
+    from { opacity: 0; transform: translateY(-18px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(18px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  @media (max-width: 700px) {
+    .legend, .resources-grid { grid-template-columns: repeat(2, 1fr); }
+    .tl-grid { grid-template-columns: repeat(2, 1fr); }
+    .finance-grid, .thread-grid { grid-template-columns: 1fr; }
+    .cell { min-height: 54px; font-size: 8.5px; }
+    .soul-banner { flex-direction: column; gap: 12px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrapper">
+
+  <header>
+    <div class="eyebrow">Mandala Life Plan · 2026 Q2 → 2029</div>
+    <h1>苗栗在地農業品牌 × 體驗創業<br><em>人生曼陀羅計畫</em></h1>
+    <div class="tagline">
+      北科大經管所・共享經濟研究・iRent 營運積累<br>
+      2029年・35歲・返鄉落地苗栗
+    </div>
+    <span class="phase-now">📍 現在：2026 Q2・Phase 1 啟動中</span>
+  </header>
+
+  <!-- BRAND SOUL -->
+  <div class="soul-banner">
+    <div class="icons">🌲🏡🌾⭐</div>
+    <div>
+      <div class="label">品牌靈魂・核心定位</div>
+      <div class="quote">「讓城市裡的人，有機會短暫活進你童年的節奏裡」<br>坐在樹下放空・三合院躺椅打盹・山上森呼吸・家常菜・整片星空</div>
+      <div class="soul-meta">
+        <span class="soul-tag">你賣的不是農產品</span>
+        <span class="soul-tag">你賣的是一種活法</span>
+        <span class="soul-tag">山林體驗・農業品牌</span>
+        <span class="soul-tag">家族資源 + 在地合作</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- MANDALA -->
+  <div class="mandala-outer">
+
+    <div class="block-9 dA">
+      <div class="cell"><span class="yr">2026</span>每週反思日記</div>
+      <div class="cell"><span class="yr">2026</span>納瓦爾信條提煉・寫下來</div>
+      <div class="cell"><span class="yr">2027</span>斯多葛哲學閱讀</div>
+      <div class="cell"><span class="yr">2027</span>區分能控制 vs 不能控制的事</div>
+      <div class="cell domain-center">🧠<br>自我認知<br>心理成長</div>
+      <div class="cell"><span class="yr">2028</span>每季獨旅或靜默</div>
+      <div class="cell"><span class="yr">2028</span>形成穩定自我敘事</div>
+      <div class="cell"><span class="yr">2029+</span>創業後定期自我校正</div>
+      <div class="cell"><span class="yr">長期</span>內在自由先於外部成就</div>
+    </div>
+
+    <div class="block-9 dB">
+      <div class="cell"><span class="yr">2026下</span>北科大經管所入學 ✓</div>
+      <div class="cell"><span class="yr">2026</span>論文：共享經濟×iRent</div>
+      <div class="cell"><span class="yr">2027</span>苗栗創業另外在筆記延伸</div>
+      <div class="cell"><span class="yr">2027</span>修課選品牌/行為設計/農業</div>
+      <div class="cell domain-center">📚<br>知識<br>與學歷</div>
+      <div class="cell"><span class="yr">2027</span>累積農業品牌案例庫</div>
+      <div class="cell"><span class="yr">2028</span>畢業・開始知識輸出</div>
+      <div class="cell"><span class="yr">2028</span>寫文章・整理觀點</div>
+      <div class="cell"><span class="yr">2029</span>論文成果轉化為創業策略</div>
+    </div>
+
+    <div class="block-9 dC">
+      <div class="cell"><span class="yr">2026</span>主動承擔跨部門任務</div>
+      <div class="cell"><span class="yr">2026</span>iRent 營運 Know-how 系統化</div>
+      <div class="cell"><span class="yr">2027</span>帶小組・主責完整專案</div>
+      <div class="cell"><span class="yr">2027</span>練習管人・管事・管結果</div>
+      <div class="cell domain-center">💼<br>職涯<br>專業積累</div>
+      <div class="cell"><span class="yr">2028</span>顧客旅程/流程設計/數據判斷</div>
+      <div class="cell"><span class="yr">2028</span>建立可帶走的能力清單</div>
+      <div class="cell"><span class="yr">2028</span>接農業/地創小顧問案</div>
+      <div class="cell"><span class="yr">2029上</span>完成交接，優雅離職</div>
+    </div>
+
+    <div class="block-9 dD">
+      <div class="cell"><span class="yr">2026 Q2</span>旅費帳戶改名田調備用金</div>
+      <div class="cell"><span class="yr">2026</span>ETF 繼續投・2029整批用</div>
+      <div class="cell"><span class="yr">2026</span>學費帳戶 $6,000/月維持</div>
+      <div class="cell"><span class="yr">2027</span>了解苗栗創業成本結構</div>
+      <div class="cell domain-center">💰<br>財務<br>與資產</div>
+      <div class="cell"><span class="yr">2027.02</span>⚠️ 現金最緊・年終補血</div>
+      <div class="cell"><span class="yr">2028</span>ETF 預估累積 40–60 萬</div>
+      <div class="cell"><span class="yr">2028</span>創業可用資金估 45–65 萬</div>
+      <div class="cell"><span class="yr">2029上</span>資金到位才執行離職返鄉</div>
+    </div>
+
+    <div class="block-9 center-mega">
+      <div class="cell core"><span style="font-size:15px">🌾</span><br>苗栗農業<br>品牌化</div>
+      <div class="cell core"><span style="font-size:15px">🏡</span><br>三合院・山林<br>體驗設計</div>
+      <div class="cell core"><span style="font-size:15px">🎯</span><br>2029年<br>35歲創業</div>
+      <div class="cell core"><span style="font-size:15px">📚</span><br>北科大經管所<br>共享經濟研究</div>
+      <div class="cell core core-main">核心目標<br>2026 Q2<br>→ 2029<br>落地苗栗</div>
+      <div class="cell core"><span style="font-size:15px">💼</span><br>iRent 經驗<br>平移創業</div>
+      <div class="cell core"><span style="font-size:15px">🌲</span><br>樹下放空<br>星空・家常菜</div>
+      <div class="cell core"><span style="font-size:15px">🤝</span><br>家族資源<br>+ 在地合作</div>
+      <div class="cell core"><span style="font-size:15px">💡</span><br>創意包裝<br>推廣轉化</div>
+    </div>
+
+    <div class="block-9 dE">
+      <div class="cell"><span class="yr">2026 Q2</span>開啟苗栗觀察筆記</div>
+      <div class="cell"><span class="yr">2026</span>完成家族資源盤點</div>
+      <div class="cell"><span class="yr">2026</span>研究 5 個農業品牌案例</div>
+      <div class="cell"><span class="yr">2027</span>認識 1–2 個在地農家</div>
+      <div class="cell domain-center">🌱<br>創業<br>準備</div>
+      <div class="cell"><span class="yr">2027</span>先建關係・不急談合作</div>
+      <div class="cell"><span class="yr">2028</span>第一個小實驗啟動</div>
+      <div class="cell"><span class="yr">2028</span>山林體驗・禮盒・市集</div>
+      <div class="cell"><span class="yr">2029</span>帶驗證過的模式落地</div>
+    </div>
+
+    <div class="block-9 dF">
+      <div class="cell"><span class="yr">2026</span>整理人際圈・減消耗型社交</div>
+      <div class="cell"><span class="yr">2026</span>深化 3–5 個核心關係</div>
+      <div class="cell"><span class="yr">2027</span>研究所跨域人脈擴展</div>
+      <div class="cell"><span class="yr">2027</span>認識設計/農經/社創圈</div>
+      <div class="cell domain-center">🤝<br>人際<br>影響力</div>
+      <div class="cell"><span class="yr">2027</span>社群穩定輸出開始</div>
+      <div class="cell"><span class="yr">2028</span>苗栗在地連結建立</div>
+      <div class="cell"><span class="yr">2028</span>青農網絡・地方創生社群</div>
+      <div class="cell"><span class="yr">2029+</span>品牌故事＝個人影響力</div>
+    </div>
+
+    <div class="block-9 dG">
+      <div class="cell"><span class="yr">現在</span>建立穩定運動習慣</div>
+      <div class="cell"><span class="yr">現在</span>不求強度・求每週不斷</div>
+      <div class="cell"><span class="yr">2026</span>睡眠飲食規律化</div>
+      <div class="cell"><span class="yr">2026</span>撐住研究所 + 工作雙軌</div>
+      <div class="cell domain-center">🏃<br>身體<br>生活能量</div>
+      <div class="cell"><span class="yr">2027</span>保護精力＝策略不是偷懶</div>
+      <div class="cell"><span class="yr">2028</span>建立個人能量管理系統</div>
+      <div class="cell"><span class="yr">2029+</span>創業後留「不思考工作」時段</div>
+      <div class="cell"><span class="yr">長期</span>身體是最長期的資本</div>
+    </div>
+
+    <div class="block-9 dH">
+      <div class="cell"><span class="yr">2026</span>每月底回看私密 IG 日記</div>
+      <div class="cell"><span class="yr">2026</span>找出觸動自己的 3–5 個觀念</div>
+      <div class="cell"><span class="yr">2027</span>形成人生信條（3 句話）</div>
+      <div class="cell"><span class="yr">2027</span>反覆修訂・不急著定稿</div>
+      <div class="cell domain-center">🌿<br>內在哲學<br>價值觀</div>
+      <div class="cell"><span class="yr">2028</span>用信條做每個重要決定</div>
+      <div class="cell"><span class="yr">2028</span>選機會・選夥伴・選方向</div>
+      <div class="cell"><span class="yr">2029+</span>哲學成為品牌靈魂</div>
+      <div class="cell"><span class="yr">長期</span>你怎麼活就是你的品牌</div>
+    </div>
+
+  </div>
+
+  <!-- LEGEND -->
+  <div style="animation: fadeUp 0.8s ease 0.3s both; margin-bottom: 40px;">
+    <div class="section-title">8 大領域說明</div>
+    <div class="legend">
+      <div class="legend-item"><div class="ldot" style="background:#4d7040"></div><div><strong>A 自我認知</strong><span>心理成長・納瓦爾實踐・每日日記</span></div></div>
+      <div class="legend-item"><div class="ldot" style="background:#2d5e7e"></div><div><strong>B 知識學歷</strong><span>北科大經管所・共享經濟論文</span></div></div>
+      <div class="legend-item"><div class="ldot" style="background:#6b3d5e"></div><div><strong>C 職涯積累</strong><span>iRent 營運 → 系統思維平移創業</span></div></div>
+      <div class="legend-item"><div class="ldot" style="background:#7a5c20"></div><div><strong>D 財務資產</strong><span>ETF 繼續投・2029 整批用於創業</span></div></div>
+      <div class="legend-item"><div class="ldot" style="background:#9e4e22"></div><div><strong>E 創業準備</strong><span>山林體驗・農業品牌・苗栗資源</span></div></div>
+      <div class="legend-item"><div class="ldot" style="background:#3a6e65"></div><div><strong>F 人際影響力</strong><span>信任型人脈・品牌故事・在地連結</span></div></div>
+      <div class="legend-item"><div class="ldot" style="background:#586e30"></div><div><strong>G 身體能量</strong><span>精力管理・雙軌生活・長期資本</span></div></div>
+      <div class="legend-item"><div class="ldot" style="background:#6e3e3e"></div><div><strong>H 內在哲學</strong><span>人生信條・品牌靈魂・活法</span></div></div>
+    </div>
+  </div>
+
+  <!-- FINANCE -->
+  <div class="finance">
+    <div class="section-title">財務規劃</div>
+    <div class="finance-grid">
+
+      <div class="finance-card">
+        <h3>💰 帳戶架構</h3>
+        <div class="finance-row"><span>學費專戶（台新）</span><span class="val">$6,000/月</span></div>
+        <div class="finance-row"><span>創業田調備用金（玉山）</span><span class="val">$2,000/月</span></div>
+        <div class="finance-row"><span>ETF 定期定額（國泰）</span><span class="val">$10,000/月</span></div>
+        <div class="finance-row"><span>保險（台新）</span><span class="val">$5,300/月</span></div>
+        <div class="finance-row highlight"><span>📌 ETF 2029 年整批作為創業基金</span></div>
+
+        <h3 style="margin-top:16px">🎓 學費儲蓄目標</h3>
+        <div class="finance-row"><span>兩年學費＋雜費</span><span class="val">$248,776</span></div>
+        <div class="finance-row"><span>額外學分 Buffer</span><span class="val">$51,224</span></div>
+        <div class="finance-row total"><span>儲蓄總目標</span><span class="val">$300,000</span></div>
+        <div class="finance-row"><span>現有啟動金（2026.03）</span><span class="val">$78,000</span></div>
+        <div class="finance-row"><span>每月 $6,000 × 24 個月</span><span class="val">$144,000</span></div>
+        <div class="finance-row warning"><span>⚠️ 年終獎金須補足缺口</span><span class="val">約 $96,000</span></div>
+      </div>
+
+      <div class="finance-card">
+        <h3>📅 2026 現金流關鍵時間點</h3>
+        <table class="cashflow-table">
+          <tr>
+            <th>時間點</th>
+            <th>預計水位</th>
+            <th>支出</th>
+            <th>剩餘</th>
+          </tr>
+          <tr>
+            <td>2026.04 現在</td>
+            <td>$78,000</td>
+            <td>—</td>
+            <td class="ok">累積中</td>
+          </tr>
+          <tr>
+            <td>2026.08 入學前</td>
+            <td>$108,000</td>
+            <td>—</td>
+            <td class="ok">準備繳費</td>
+          </tr>
+          <tr>
+            <td>2026.09 開學</td>
+            <td>$114,000</td>
+            <td>$62,194</td>
+            <td class="ok">$51,806</td>
+          </tr>
+          <tr>
+            <td>2027.02 二學期</td>
+            <td>$87,806</td>
+            <td>$62,194</td>
+            <td class="warn">$25,612 ⚠️</td>
+          </tr>
+        </table>
+
+        <h3 style="margin-top:16px">🌱 創業準備金估算（2029年）</h3>
+        <div class="finance-row"><span>ETF 本金（$10,000 × 36 個月）</span><span class="val">~$360,000</span></div>
+        <div class="finance-row"><span>保守年化報酬 5%</span><span class="val">+$30–40,000</span></div>
+        <div class="finance-row"><span>現有 ETF 累積（待確認）</span><span class="val">＿＿＿</span></div>
+        <div class="finance-row"><span>田調帳戶（$2,000 × 36 個月）</span><span class="val">$72,000</span></div>
+        <div class="finance-row total"><span>預估創業可用資金</span><span class="val">約 $45–65 萬</span></div>
+        <div class="finance-row highlight"><span>缺口補足：2028 小實驗收入 ＋ 畢業後薪資調整</span></div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- RESOURCES -->
+  <div class="resources">
+    <div class="section-title">🏡 苗栗家族資源盤點</div>
+    <div class="resources-grid">
+      <div class="res-card">
+        <span class="res-icon">🍓</span>
+        <h4>表姊家田園</h4>
+        <p>草莓・番茄・黃瓜<br>大湖・家族協議使用</p>
+        <span class="res-tag">體驗採摘・品牌場景</span>
+        <span class="res-tag">草莓 12–4 月</span>
+      </div>
+      <div class="res-card">
+        <span class="res-icon">🏡</span>
+        <h4>老家三合院</h4>
+        <p>大湖・家族所有<br>品牌靈魂的核心所在</p>
+        <span class="res-tag">體驗住宿</span>
+        <span class="res-tag">活動場地</span>
+      </div>
+      <div class="res-card">
+        <span class="res-icon">🏢</span>
+        <h4>大湖市區透天厝</h4>
+        <p>大湖市區・家族所有<br>可作為品牌營運基地</p>
+        <span class="res-tag">工作室</span>
+        <span class="res-tag">倉儲・接待</span>
+      </div>
+      <div class="res-card">
+        <span class="res-icon">🌲</span>
+        <h4>老家山上</h4>
+        <p>大湖・自然山林環境<br>品牌靈魂：樹下放空・整片星空</p>
+        <span class="res-tag">森林體驗</span>
+        <span class="res-tag">靜心・攝影</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- TIMELINE -->
+  <div class="timeline">
+    <div class="section-title">階段時間軸</div>
+    <div class="tl-grid">
+      <div class="tl-card p1">
+        <span class="tl-year">2026</span>
+        <span class="tl-phase-label">Phase 1 · 種下根 📍 現在</span>
+        <ul>
+          <li>北科大經管所 9 月入學</li>
+          <li>旅費帳戶改名田調備用金</li>
+          <li>開啟苗栗觀察筆記</li>
+          <li>完成家族資源盤點</li>
+          <li>Q3 開學前確立運動習慣</li>
+        </ul>
+      </div>
+      <div class="tl-card p2">
+        <span class="tl-year">2027</span>
+        <span class="tl-phase-label">Phase 2 · 長出枝幹</span>
+        <ul>
+          <li>研究所＋工作雙軌穩定</li>
+          <li>論文方向確立（iRent 共享）</li>
+          <li>在地農家建立 1–2 個關係</li>
+          <li>職場帶小組・主責專案</li>
+          <li>⚠️ 2027.02 現金最緊・年終補血</li>
+        </ul>
+      </div>
+      <div class="tl-card p3">
+        <span class="tl-year">2028</span>
+        <span class="tl-phase-label">Phase 3 · 小實驗驗證</span>
+        <ul>
+          <li>研究所畢業</li>
+          <li>山林體驗小實驗啟動</li>
+          <li>ETF 累積達 40–60 萬</li>
+          <li>商業模式雛形確定</li>
+          <li>開始個人知識輸出</li>
+        </ul>
+      </div>
+      <div class="tl-card p4">
+        <span class="tl-year">2029</span>
+        <span class="tl-phase-label">Phase 4 · 落地創業 🎯</span>
+        <ul>
+          <li>上半年・離職告別台北</li>
+          <li>下半年・正式落地苗栗</li>
+          <li>山林體驗品牌正式啟動</li>
+          <li>帶驗證過的模式創業</li>
+          <li>成為 35 歲那個自己</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- THREAD -->
+  <div class="thread">
+    <div class="section-title">核心串聯邏輯</div>
+    <div class="thread-grid">
+      <div class="thread-item">
+        <div class="th">📚 研究所</div>
+        <p>北科大經管所論文聚焦共享經濟 × iRent——學術研究用自己最有優勢的資料，苗栗創業另外在觀察筆記中延伸，兩條線不互相干擾</p>
+      </div>
+      <div class="thread-item">
+        <div class="th">💼 iRent 經驗</div>
+        <p>共享服務的會員經營・顧客體驗設計・數據運用・營運流程——完整平移到山林體驗事業，是你對純農背景者最大的差異優勢</p>
+      </div>
+      <div class="thread-item">
+        <div class="th">🌾 創業落地</div>
+        <p>2028 年小實驗驗證商業模式，2029 年帶著「研究＋實驗」雙重驗證的方案落地苗栗——不是帶著想法去，是帶著答案去</p>
+      </div>
+    </div>
+    <div class="arrow-chain">
+      <strong>北科大經管所（共享經濟研究・iRent 為例）</strong>
+      　→　iRent 營運經驗平移山林體驗設計
+      　→　苗栗觀察筆記 × 資源盤點
+      　→　2028 小實驗驗證
+      　→　<strong>2029 落地・帶答案創業</strong>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
